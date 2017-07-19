@@ -5,7 +5,8 @@ using UnityEngine;
 public class camera : MonoBehaviour {
 	public GameObject player;
 	Vector3 offset;
-	float yRotation;
+	float xRotation, yRotation;
+
 	// Use this for initialization
 	void Start () {
 		offset = transform.position - player.transform.position;
@@ -14,6 +15,18 @@ public class camera : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		BetaMove ();
+	}
+
+	void ZetaMove() {
+		Quaternion rotation = Quaternion.Euler(
+			xRotation += Input.GetAxis("VerticalRight"),
+			yRotation += Input.GetAxis("HorizontalRight"),
+			0f
+		)
+
+		transform.rotation = rotation;
+		transform.position = player.transform.position + rotation * new Vector3(0f, 1f, -3f);
+		transform.LookAt(player.transform.position);
 	}
 
 	void BetaMove() {
