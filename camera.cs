@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class camera : MonoBehaviour {
 	public GameObject player;
-	Vector3 offset;
 	float xRotation, yRotation;
 
 	// Use this for initialization
 	void Start () {
-		offset = transform.position - player.transform.position;
 	}
 
 	// Update is called once per frame
@@ -22,7 +20,7 @@ public class camera : MonoBehaviour {
 			xRotation += Input.GetAxis("VerticalRight"),
 			yRotation += Input.GetAxis("HorizontalRight"),
 			0f
-		)
+		);
 
 		transform.rotation = rotation;
 		transform.position = player.transform.position + rotation * new Vector3(0f, 1f, -3f);
