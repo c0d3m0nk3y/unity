@@ -8,6 +8,7 @@ public class player : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody>();
+		GetComponent<Rigidbody>()
 	}
 	
 	// Update is called once per frame
@@ -16,7 +17,6 @@ public class player : MonoBehaviour {
 	}
 
 	void AlphaMove() {
-		float x = Input.GetAxis ("Horizontal") * Time.deltaTime * 50f;
 		float z = Input.GetAxis ("Vertical") * Time.deltaTime * 50f;
 
 		Vector3 v = camera.transform.forward;
@@ -26,5 +26,9 @@ public class player : MonoBehaviour {
 	}
 
 	void BetaMove() {
+		float x = Input.GetAxis("Horizontal") * Time.deltaTime * 5f;
+		float z = Input.GetAxis("Vertical") * Time.deltaTime * 5f;
+
+		transform.Translate(x, 0f, z);
 	}
 }
