@@ -5,6 +5,7 @@ using UnityEngine;
 public class camera : MonoBehaviour {
 	public GameObject player;
 	float xRotation, yRotation;
+	public Vector3 offset;
 
 	// Use this for initialization
 	void Start () {
@@ -23,7 +24,7 @@ public class camera : MonoBehaviour {
 		);
 
 		transform.rotation = rotation;
-		transform.position = player.transform.position + rotation * new Vector3(0f, 1f, -3f);
+		transform.position = player.transform.position + rotation * offset;
 		transform.LookAt(player.transform.position);
 	}
 
