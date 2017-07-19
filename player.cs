@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Mathf;
 
 public class player : MonoBehaviour {
 	Rigidbody rb;
