@@ -53,7 +53,7 @@ public class player : MonoBehaviour {
 	void ReduceBoost() {
 		if(!boosting) return;
 
-		speed = Mathf.Lerp(maxSpeed, normalSpeed, 1 - boostTime);
+		speed = Mathf.Lerp(boostSpeed, normalSpeed, 1 - boostTime);
 		boostTime += Time.deltaTime;
 
 		if(boostTime >= 1.0f) {
@@ -67,10 +67,10 @@ public class player : MonoBehaviour {
 	void Boost() {
 		if(boosting) return;
 
-		if(Input.KeyPressed('x')) {
-			bootsTime = 0f;
-			boosting = true;
-			speed = maxSpeed;
-		}
+		//if(Input.KeyPressed('x')) {
+		//	bootsTime = 0f;
+		//	boosting = true;
+		//	speed = maxSpeed;
+		//}
 	}
 }

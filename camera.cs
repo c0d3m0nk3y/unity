@@ -18,8 +18,8 @@ public class camera : MonoBehaviour {
 
 	void ZetaMove() {
 		Quaternion rotation = Quaternion.Euler(
-			xRotation += Input.GetAxis("VerticalRight"),
-			yRotation += Input.GetAxis("HorizontalRight"),
+			xRotation += Input.GetAxis("Vertical"),
+			yRotation += Input.GetAxis("Horizontal"),
 			0f
 		);
 
